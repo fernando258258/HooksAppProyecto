@@ -3,7 +3,8 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 // import { MemoHook } from "./06-memos/MemoHook";
 // import { CallbackHook } from "./06-memos/Callbackhook";
-import { Padre } from "./07-tarea-memo/Padre";
+// import { Padre } from "./07-tarea-memo/Padre";
+import "./08-useReduce/intro-reducer";
 // import { FocusScreen } from "./04-useRef/focusScreen";
 // import { Layout } from "./05-useLayoutEffect/Layout";
 // import { Memorize } from "./06-memos/Memorize";
@@ -24,6 +25,6 @@ createRoot(document.getElementById("root")).render(
     {/* <Memorize /> */}
     {/* <MemoHook /> */}
     {/* <CallbackHook /> */}
-    <Padre />
+    {/* <Padre /> */}
   </StrictMode>
 );
