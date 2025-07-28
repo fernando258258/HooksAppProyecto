@@ -1,22 +1,29 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react"
 
 export const Message = () => {
-  useEffect(() => {
-    const onMouseMove = ({ x, y }) => {
-      const coords = { x, y };
-      console.log(coords);
-    };
+    
+    const [coords, setCoords] = useState({ x: 0, y: 0});
 
-    window.addEventListener("mousemove", onMouseMove);
+    useEffect(() => {
+        
+        const onMouseMove = ({ x, y }) => {
+            // const coords = { x, y };
+            setCoords({ x, y })
+        }
 
-    return () => {
-      window.removeEventListener("mousemove", onMouseMove);
-    };
-  }, []);
+        window.addEventListener( 'mousemove', onMouseMove );
+        
+      return () => {
+        window.removeEventListener( 'mousemove', onMouseMove );
+      }
+    }, []);
+    
+
 
   return (
     <>
-      <h3>Usuario ya existe</h3>
+        <h3>Usuario ya existe</h3>
+        { JSON.stringify( coords ) }
     </>
-  );
-};
+  )
+}
