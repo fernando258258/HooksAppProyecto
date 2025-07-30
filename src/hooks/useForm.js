@@ -1,25 +1,26 @@
-import { useState } from 'react';
+// Es un custom hook que controla el estado del formulario (inputs y reseteo).
 
-export const useForm = ( initialForm = {} ) => {
-  
-    const [ formState, setFormState ] = useState( initialForm );
+import { useState } from "react";
 
-    const onInputChange = ({ target }) => {
-        const { name, value } = target;
-        setFormState({
-            ...formState,
-            [ name ]: value
-        });
-    }
+export const useForm = (initialForm = {}) => {
+  const [formState, setFormState] = useState(initialForm);
 
-    const onResetForm = () => {
-        setFormState( initialForm );
-    }
+  const onInputChange = ({ target }) => {
+    const { name, value } = target;
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
 
-    return {
-        ...formState,
-        formState,
-        onInputChange,
-        onResetForm,
-    }
-}
+  const onResetForm = () => {
+    setFormState(initialForm);
+  };
+
+  return {
+    ...formState,
+    formState,
+    onInputChange,
+    onResetForm,
+  };
+};
