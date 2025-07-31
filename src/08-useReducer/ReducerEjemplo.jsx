@@ -8,7 +8,7 @@ const initialState = [
   },
 ];
 
-// 3. React introduce el nuevo estado + la accion mandada
+// 3. React introduce la accion mandada
 const todoReducer = (state, action) => {
   if (action.type === "[TODO] add todo") {
     return [...state, action.payload];

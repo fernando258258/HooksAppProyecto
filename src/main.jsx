@@ -21,6 +21,6 @@ import { ReducerEjemplo } from "./08-useReducer/ReducerEjemplo";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   // <React.StrictMode>
-  <ReducerEjemplo />
+  <TodoApp />
   // </React.StrictMode>
 );
