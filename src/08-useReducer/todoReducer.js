@@ -1,27 +1,31 @@
-// Es la función que recibe acciones y devuelve el nuevo estado de las tareas.
+// { type: [todo remove], payload: id }
 
-export const todoReducer = (initialState = [], action) => {
-  switch (action.type) {
-    case "[TODO] Add Todo":
-      return [...initialState, action.payload];
+export const todoReducer = ( initialState = [], action ) => {
 
-    case "[TODO] Remove Todo":
-      return initialState.filter((todo) => todo.id !== action.payload);
 
-    case "[TODO] Toggle Todo":
-      return initialState.map((todo) => {
-        if (todo.id === action.payload) {
-          // id
-          return {
-            ...todo,
-            done: !todo.done,
-          };
-        }
+    switch ( action.type ) {
+        case '[TODO] Add Todo':
+            return [ ...initialState, action.payload ];
 
-        return todo;
-      });
+        case '[TODO] Remove Todo':
+            return initialState.filter( todo => todo.id !== action.payload );
 
-    default:
-      return initialState;
-  }
-};
+        case '[TODO] Toggle Todo':
+            return initialState.map( todo => {
+
+                if ( todo.id === action.payload ) {// id
+                    return {
+                        ...todo,
+                        done: !todo.done
+                    }
+                } 
+
+                return todo;
+            });
+    
+        default:
+            return initialState;
+    }
+
+
+}
